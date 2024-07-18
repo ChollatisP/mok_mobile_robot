@@ -35,13 +35,13 @@ def generate_launch_description():
                         arguments=['-topic', 'robot_description',
                                    '-entity', 'my_bot'],
                         output='screen')
-    # rviz_node = Node(
-    #         package='rviz2',
-    #         namespace='',
-    #         executable='rviz2',
-    #         name='rviz2',
-    #         arguments=['-d' + os.path.join(get_package_share_directory('mok_mobile_robot'), 'config', 'config_file.rviz')]
-    #     )
+    rviz_node = Node(
+            package='rviz2',
+            namespace='',
+            executable='rviz2',
+            name='rviz2',
+            arguments=['-d' + os.path.join(get_package_share_directory('mok_mobile_robot'), 'config', 'config_file.rviz')]
+        )
 
 
 
@@ -50,7 +50,7 @@ def generate_launch_description():
         rsp,
         gazebo,
         spawn_entity,
-        #rviz_node,
+        rviz_node,
     ])
 
 
