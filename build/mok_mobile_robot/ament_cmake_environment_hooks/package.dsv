@@ -1,0 +1,4 @@
+source;share/mok_mobile_robot/local_setup.bash
+source;share/mok_mobile_robot/local_setup.dsv
+source;share/mok_mobile_robot/local_setup.sh
+source;share/mok_mobile_robot/local_setup.zsh

@@ -1,0 +1,2 @@
+source;share/mok_mobile_robot/environment/ament_prefix_path.sh
+source;share/mok_mobile_robot/environment/path.sh
