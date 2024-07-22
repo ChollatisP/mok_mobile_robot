@@ -11,13 +11,14 @@ Note that each directory currently has at least one file in it to ensure that gi
 ### First open 3 terminal and run these command
 
 ```
-ros2 launch mok_mobile_robot launch_sim.launch.py world:=./worlds/room.world 
+ros2 launch mok_mobile_robot launch_sim.launch.py world:=./ros2_ws/mobile_robot/src/mok_mobile_robot/worlds/room.world 
 ```
 
 ```
-ros2 launch slam_toolbox online_async_launch.py params_file:=./ros2_ws/mobile_robot/src/mok_mobile_robot/config/mapper_params_online_async.yaml use_sim_time:=true
+ros2 launch slam_toolbox online_async_launch.py slam_params_file:=./ros2_ws/mobile_robot/src/mok_mobile_robot/config/mapper_params_online_async_local.yaml use_sim_time:=true
 ```
 
 ```
-ros2 launch nav2_bringup navigation_launch.py use_sim_time:=true
+ros2 launch nav2_bringup bringup_launch.py map:=my_map_save.yaml use_sim_time:=true
+
 ```
