@@ -19,6 +19,6 @@ ros2 launch slam_toolbox online_async_launch.py slam_params_file:=./ros2_ws/mobi
 ```
 
 ```
-ros2 launch nav2_bringup bringup_launch.py map:=my_map_save.yaml use_sim_time:=true
+ros2 launch nav2_bringup navigation_launch.py map:=./my_map_save.yaml
 
 ```
