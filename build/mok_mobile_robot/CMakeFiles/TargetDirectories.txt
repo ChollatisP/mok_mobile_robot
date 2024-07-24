@@ -1,9 +1,0 @@
-/home/chollatisp/ros2_ws/mobile_robot/src/mok_mobile_robot/build/mok_mobile_robot/CMakeFiles/uninstall.dir
-/home/chollatisp/ros2_ws/mobile_robot/src/mok_mobile_robot/build/mok_mobile_robot/CMakeFiles/mok_mobile_robot_uninstall.dir
-/home/chollatisp/ros2_ws/mobile_robot/src/mok_mobile_robot/build/mok_mobile_robot/CMakeFiles/test.dir
-/home/chollatisp/ros2_ws/mobile_robot/src/mok_mobile_robot/build/mok_mobile_robot/CMakeFiles/edit_cache.dir
-/home/chollatisp/ros2_ws/mobile_robot/src/mok_mobile_robot/build/mok_mobile_robot/CMakeFiles/rebuild_cache.dir
-/home/chollatisp/ros2_ws/mobile_robot/src/mok_mobile_robot/build/mok_mobile_robot/CMakeFiles/list_install_components.dir
-/home/chollatisp/ros2_ws/mobile_robot/src/mok_mobile_robot/build/mok_mobile_robot/CMakeFiles/install.dir
-/home/chollatisp/ros2_ws/mobile_robot/src/mok_mobile_robot/build/mok_mobile_robot/CMakeFiles/install/local.dir
-/home/chollatisp/ros2_ws/mobile_robot/src/mok_mobile_robot/build/mok_mobile_robot/CMakeFiles/install/strip.dir
