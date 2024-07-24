@@ -10,16 +10,10 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 
 from launch_ros.actions import Node
 
-from launch.actions import (DeclareLaunchArgument, EmitEvent, LogInfo,
-                            RegisterEventHandler)
-from launch.conditions import IfCondition
+from launch.actions import DeclareLaunchArgument
 from launch.events import matches_action
-from launch.substitutions import (AndSubstitution, LaunchConfiguration,
-                                  NotSubstitution)
-from launch_ros.actions import LifecycleNode
-from launch_ros.event_handlers import OnStateTransition
-from launch_ros.events.lifecycle import ChangeState
-from lifecycle_msgs.msg import Transition
+from launch.substitutions import LaunchConfiguration
+from launch_ros.actions import Node
 
 def generate_launch_description():
 
@@ -55,6 +49,28 @@ def generate_launch_description():
             name='rviz2',
             arguments=['-d' + os.path.join(get_package_share_directory('mok_mobile_robot'), 'config', 'config_file.rviz')]
         )
+    use_sim_time = LaunchConfiguration('use_sim_time')
+    slam_params_file = LaunchConfiguration('slam_params_file')
+
+    declare_use_sim_time_argument = DeclareLaunchArgument(
+        'use_sim_time',
+        default_value='true',
+        description='Use simulation/Gazebo clock')
+    declare_slam_params_file_cmd = DeclareLaunchArgument(
+        'slam_params_file',
+        default_value=os.path.join(get_package_share_directory("mok_mobile_robot"),
+                                   'config', 'mapper_params_online_async_local.yaml'),
+        description='./ros_ws/mobile_robot/src/mok_mobile_robot/config/mapper_params_online_async_local.yaml')
+
+    start_async_slam_toolbox_node = Node(
+        parameters=[
+          slam_params_file,
+          {'use_sim_time': use_sim_time}
+        ],
+        package='slam_toolbox',
+        executable='async_slam_toolbox_node',
+        name='slam_toolbox',
+        output='screen')
 
 
 
@@ -64,6 +80,9 @@ def generate_launch_description():
         gazebo,
         spawn_entity,
         rviz_node,
+        declare_use_sim_time_argument,
+        declare_slam_params_file_cmd,
+        start_async_slam_toolbox_node
     ])
 
 
